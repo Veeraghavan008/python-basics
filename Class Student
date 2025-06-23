@@ -1,0 +1,16 @@
+class Student:
+    def __init__(self, name, mks):
+        self.name = name
+        self.mks = mks
+
+    def total(self):
+        t = sum(self.mks)
+        print("total marks =",t)
+
+    def avg(self):
+        a = sum(self.mks) / len(self.mks)
+        print("average marks =",a)
+
+s1 = Student("Vrushabh", [90,92,79,99])
+s1.total()
+s1.avg() 
