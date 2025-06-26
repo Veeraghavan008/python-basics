@@ -1,0 +1,40 @@
+class Item:
+    def __init__(self,name,price,quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+class Cart:
+    def __init__(self):
+        self.I = list()
+
+    def addCart(self,item):
+        self.I.append(item)
+
+    def removeCart(self,item):
+        self.I.remove(item)
+
+    def totalPrice(self):
+        total = 0
+        for i in self.I:
+            total += i.price * i.quantity
+        return total
+
+    def show_cart(self):
+        print("Items in your cart:")
+        for item in self.I:
+            print(item)
+        print(f"Total Bill: ₹{self.totalPrice()}")
+
+cart = Cart()
+
+item1 = Item("Pen", 10, 3)
+item2 = Item("Notebook", 50, 2)
+item3 = Item("Eraser", 5, 4)
+
+cart.addCart(item1)
+cart.addCart(item2)
+cart.addCart(item3)
+cart.totalPrice()
+
+cart.show_cart()
